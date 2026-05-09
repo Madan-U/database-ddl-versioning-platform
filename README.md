@@ -165,7 +165,7 @@ GITHUB_REPO=your-ddl-repo
 ```
 # Format: IP,port
 10.x.x.x,1433
-10.x.x.x,13442
+10.x.x.x,1453
 ```
 
 **3. Populate `APP_NAME_MAPPING`** in `ddl_extractor.py` — maps server IPs to application names for readable folder names.
