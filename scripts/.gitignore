@@ -1,0 +1,48 @@
+# ─────────────────────────────────────────────
+# .gitignore — DDL Backup & Git Sync Automation
+# ─────────────────────────────────────────────
+
+# Secrets & credentials — NEVER commit these
+.env
+*.key
+*.pem
+*.pfx
+*.p12
+secrets.json
+vault_token.txt
+
+# Server inventory — contains internal IPs
+servers.txt
+
+# Extracted DDL output (tracked separately in the ddl_tracker repo)
+ddl_exports/
+!ddl_exports/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Logs
+*.log
+central_logs/
+git_summary.txt
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
