@@ -1,67 +1,6 @@
 #!/usr/bin/env python3
 """
-@file        sqlserver-ddl-export-engine.py
-@description Enterprise Multi-Server Database DDL Extraction & Schema Versioning Engine
-
-Workflow:
-  1. Load centralized SQL Server inventory from configuration source
-  2. Authenticate to target SQL Server instances using secure environment credentials
-  3. Enumerate accessible user databases across all target servers
-  4. Extract structured DDL definitions for database objects
-  5. Generate version-controlled SQL export files organized by:
-        Server → Database → Object Type
-  6. Capture operational execution statistics and extraction metadata
-  7. Log extraction status to centralized operational logging table
-  8. Prepare structured output for downstream Git synchronization workflows
-
-Extracted Object Types:
-  - Tables
-  - Primary Keys
-  - Unique Constraints
-  - Foreign Keys
-  - Check Constraints
-  - Indexes
-  - Views
-  - Stored Procedures
-  - Functions
-  - Triggers
-
-Operational Features:
-  - Multi-server parallel extraction support
-  - Structured DDL export hierarchy
-  - Environment-based credential management
-  - Centralized execution logging
-  - Permission-aware database handling
-  - Batch-based extraction processing
-  - Production-safe error handling
-  - Operational reporting support
-
-Output Structure:
-  ddl_exports/<ApplicationName_IP>/<Database>/<TYPE__schema__object.sql>
-
-Execution Type :
-  Scheduled Enterprise DDL Extraction Workflow
-
-Target Purpose :
-  Centralized database schema version tracking, operational auditability,
-  infrastructure governance, and Git-based DDL lifecycle management.
-
-Security Practices:
-  - No hardcoded credentials
-  - Environment-variable authentication
-  - Centralized secret management compatible
-  - Least-privilege operational design
-
-@author       Madan U
-@role         Cloud Database Administrator
-@project      Database DDL Versioning Platform
-@technology   Python | SQL Server | pyodbc | GitOps | Operational Automation
-@scope        Enterprise Database Governance & Schema Change Tracking
-"""
-
-#!/usr/bin/env python3
-"""
-ddl_extractor.py
+sqlserver-ddl-export-engine.py
 
 Multi-server DDL Extraction Engine
 ====================================
@@ -80,8 +19,11 @@ Output layout:
 Credentials are loaded from environment variables — never hardcoded.
 See .env.example for required variables.
 
-Author : Madan U — Associate Cloud DBA
-Context: Centralized schema versioning across 250+ SQL Server instances
+@author       Madan U
+@role         Cloud Database Administrator
+@project      Database DDL Versioning Platform
+@technology   Python | SQL Server | pyodbc | GitOps | Operational Automation
+@scope        Enterprise Database Governance & Schema Change Tracking
 """
 
 import pyodbc
