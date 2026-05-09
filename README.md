@@ -23,16 +23,16 @@ Central SQL Server (Management Node)
 │
 ├─ SQL Server Agent Job: "(dba) DDL Backup & Git Sync Daily / 12 Hour"
 │   │
-│   ├─ Step 1: Cleanup         cleanup_ddl_exports.ps1
+│   ├─ Step 1: Cleanup         export-directory-cleanup.ps1
 │   │           Wipes ddl_exports/ (preserving .git) so deleted DB
 │   │           objects appear as deletions in Git after regeneration
 │   │
-│   ├─ Step 2: DDL Extraction  ddl_extractor.py
+│   ├─ Step 2: DDL Extraction  sqlserver-ddl-export-engine.py
 │   │           Reads server list → connects to each SQL Server →
 │   │           extracts all DDL → writes structured .sql files
 │   │           Logs result to DBA_Admin.dbo.DDL_Git_Sync_Logs
 │   │
-│   ├─ Step 3: Git Sync        git_sync.py
+│   ├─ Step 3: Git Sync        secure-git-sync-engine.py
 │   │           Authenticates via Vault AppRole →
 │   │           fetches short-lived GitHub App token →
 │   │           commits + pushes all changes to master
