@@ -220,5 +220,5 @@ This gives the DBA team a clear, timestamped audit trail of every schema change 
 
 ---
 
-*Author: Madan U — Associate Cloud DBA, AngelOne (via Ahana Systems)*  
+*Author: Madan U  
 *LinkedIn: [linkedin.com/in/madan-u-3bb24627b](https://linkedin.com/in/madan-u-3bb24627b)*
